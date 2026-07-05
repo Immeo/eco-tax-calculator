@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Eco Tax Calculator
 
-## Getting Started
+Веб-приложение для расчёта экологического налога, построенное на **Next.js**. Проект включает в себя удобный интерфейс для ввода данных, динамический расчёт суммы, а также функции для генерации и скачивания отчёта в формате PDF.
 
-First, run the development server:
+## 🚀 Функциональность
 
-```bash
+- **Расчёт налога**: Основная логика для вычисления экологического сбора на основе введённых пользователем данных.
+- **Модальное окно оплаты**: Всплывающее окно для отображения деталей платежа или дополнительной информации.
+- **Генерация PDF**: Библиотека для создания и скачивания файла с результатами расчёта.
+- **Кастомизация темы**: Встроенная поддержка светлой и тёмной темы оформления (`ThemeProvider`).
+
+## 🛠️ Технологии
+
+- **Фреймворк**: [Next.js](https://nextjs.org/) (React)
+- **Язык**: TypeScript
+- **Стилизация**: CSS Modules (через `app/page.module.css`)
+- **Шрифты**: Оптимизированные шрифты Geist от Vercel
+- **Генерация PDF**: Собственная утилита в папке `lib`
+
+## 📁 Структура проекта (основные папки)
+
+eco-tax-calculator/
+├── app/ # Основная логика приложения Next.js (App Router)
+│ ├── page.tsx # Главная страница с калькулятором
+│ └── layout.tsx # Корневой макет с провайдерами (тема, стили)
+├── components/ # Переиспользуемые UI-компоненты
+│ └── PaywallModal # Модальное окно для оплаты
+├── lib/ # Вспомогательные функции и утилиты
+│ └── pdf-generator # Логика для создания PDF-отчётов
+└── public/ # Статические файлы (иконки, изображения)
+
+text
+
+## 🧑‍💻 Установка и запуск
+
+Для локальной разработки выполните следующие шаги:
+
+1.  **Клонируйте репозиторий:**
+    ```bash
+    git clone https://github.com/Immeo/eco-tax-calculator.git
+    cd eco-tax-calculator
+    Установите зависимости:
+    ```
+
+bash
+npm install
+
+# или
+
+yarn install
+
+# или
+
+pnpm install
+Запустите сервер разработки:
+
+bash
 npm run dev
-# or
+
+# или
+
 yarn dev
-# or
+
+# или
+
 pnpm dev
-# or
+
+# или
+
 bun dev
-```
+Откройте http://localhost:3000 в вашем браузере, чтобы увидеть результат.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📝 Редактирование
+Главная страница находится в файле app/page.tsx. При её редактировании страница будет автоматически обновляться.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Для изменения стилей используйте app/page.module.css или другие CSS-модули.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🚢 Деплой
+Самый простой способ развернуть приложение — использовать Vercel (платформа от создателей Next.js).
 
-## Learn More
+Загрузите ваш код на GitHub.
 
-To learn more about Next.js, take a look at the following resources:
+Импортируйте репозиторий в [Vercel](https://vercel.com/new).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Следуйте инструкциям по деплою.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Подробнее в [документации Next.js по деплою](https://nextjs.org/docs/app/building-your-application/deploying).
 
-## Deploy on Vercel
+📚 Полезные ссылки
+[Документация Next.js](https://nextjs.org/docs) — узнайте о возможностях фреймворка.
+[Интерактивный учебник Next.js](https://nextjs.org/learn) — для более глубокого изучения.
+[Репозиторий Next.js на GitHub](https://github.com/vercel/next.js) — ваш фидбек приветствуется.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🤝 Вклад в проект
+Предложения и улучшения приветствуются. Вы можете открыть Issue или отправить Pull Request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Разработчик: Immeo

@@ -59,6 +59,7 @@ export default function Home() {
 	const [input, setInput] = useState<CalculationInput>(INITIAL_INPUT);
 	const [breakdown, setBreakdown] = useState<CalculationBreakdown | null>(null);
 	const [showPaywall, setShowPaywall] = useState(false);
+
 	const remaining = getRemainingFree();
 
 	const updateInput = <K extends keyof CalculationInput>(
@@ -118,6 +119,7 @@ export default function Home() {
 							color={remaining > 0 ? 'green' : 'red'}
 							size='lg'
 							radius='md'
+							suppressHydrationWarning
 						>
 							{remaining === Infinity
 								? '∞ Безлимит'
